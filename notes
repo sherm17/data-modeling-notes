@@ -1,0 +1,5 @@
+4 main types of data warehousing fact tables
+	- transanction fact table
+	- periodic snapshot fact tables
+	- accumulating snapsho fact tables
+	- factless fact tables
