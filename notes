@@ -12,3 +12,11 @@ Transaction table:
 	  reference the student and date dimensional tables. 
 	  	- the student and date dimensional table each will contain more data on students
 	  	  and dates
+
+Periodic Snapshot Fact Table
+	- provides you a snapshot of data at a specific time
+	- in the meal_card_EOW_snapshot example
+		- you have a EOW balance for the meal card
+		- you can also have a student and week key
+		- the student key can be repeated because the same student can
+		  have difference balances at the end of the different weeks
