@@ -14,9 +14,22 @@ Transaction table:
 	  	  and dates
 
 Periodic Snapshot Fact Table
+	- track a given measurement at regular intervals
 	- provides you a snapshot of data at a specific time
 	- in the meal_card_EOW_snapshot example
 		- you have a EOW balance for the meal card
 		- you can also have a student and week key
 		- the student key can be repeated because the same student can
 		  have difference balances at the end of the different weeks
+
+Accumulating Snapshot Table
+	- Track the progress of a business process through formally defined stages
+	- we want to measure the elapsed time spent in each phase
+		- include both completed and in-progress phases
+		- can also track other measures as process proceeds
+	- introduces concept of multiple relationships from fact table back to 
+	  a single dimension table
+	- for example, in a financial aid application process, there are many steps that must happen
+		- students submits applications, initial screening, prelim decision, final decision, and payment made to student
+			- there is some amount of time spent between each process
+	
