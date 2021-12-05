@@ -33,3 +33,15 @@ Accumulating Snapshot Table
 		- students submits applications, initial screening, prelim decision, final decision, and payment made to student
 			- there is some amount of time spent between each process
 	
+Factless Fact Table
+	- record occurrence of transaction that has no measurement
+	- record coverage or eligility relationships
+	- there is an event that occurs that we want to track
+		- but nothing significant to measure about that event
+	- student registering for online webinar example
+		- track which students register
+		- for which webinars
+		- track date each student registers for a given webinar
+		- track the scheduled date for each webinar
+	
+	- can have multiple factless fact tables in the same schema
