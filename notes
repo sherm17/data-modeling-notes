@@ -45,3 +45,43 @@ Factless Fact Table
 		- track the scheduled date for each webinar
 	
 	- can have multiple factless fact tables in the same schema
+
+
+Slowly Changing Dimensions
+	- techniques used to manage history within data warehouse
+	- multiple techniques based on various history data
+	- enables data warehouse to appropriately manage history regardless of policies in transactional applications
+	- three main policies for historical data
+		- Type 1 (overwrite)
+			- overwritre old data; no history retention
+			- replace old value with new value
+			- same row and column in database table
+			- usually a simple update SQL statement
+			- common use is to correct erroneous data
+		- Type 2 (new row)
+			- maintain unlimited history
+			- new row added to dimension table
+			- complications with reporting and analytics
+			- we can add new columns to these kind of tables to include dates 
+			  and how current it is
+		- Type 3 (new column)
+			- maintain limited history
+			- add new columns rather than new row to reflect changes
+			- "old value" column and "new value" column
+
+			------------------------------------------------------------------	  
+SCD type|	Technique					  |	Implications
+------------------------------------------------------------------
+Type 1	|	"in-place update" ETL pattern |	simplest... but no 
+		|								  |	history maintainced
+-----------------------------------------------------------------
+Type 2  |  Create new dimension table row | most architecturally
+	    |  for each new "version" of      | complex... but robust
+		|  history						  |	rep of history
+----------------------------------------------------------------
+Type 3  | Small numbers of dimension      | easily switch back 
+        | table columns for multiple      | and fourth between
+		| "versions" of history           | "as-is" and "as-was"
+		| 								  | reporting... but 
+		|								  | limited use cases
+
